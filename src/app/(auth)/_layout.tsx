@@ -1,4 +1,5 @@
 import { Drawer } from 'expo-router/drawer'
+import { router } from 'expo-router'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { useAutenticacao } from '@/hooks/useAutenticacao'
 import { MaterialIcons } from '@react-native-vector-icons/material-icons'
@@ -25,16 +26,16 @@ export default function Layout() {
             },
           }}
           
-          drawerContent={(props) => (
+          drawerContent={() => (
           <View style={{ flex: 1, padding: 20 }}>
-          <Text style={{ fontSize: 24, marginBottom: 30 }}>
+          <Text style={estilos.menu}>
             Menu
           </Text>
 
           {/* PRIMEIRO ITEM DO MENU (HOME) */}
           <TouchableOpacity
           style={estilos.drawerItem}
-            onPress={() => props.navigation.navigate('Dashboard')}>
+            onPress={() => router.navigate('/(auth)/Dashboard')}>
             <Text style={estilos.drawerIcon}><MaterialIcons name="dashboard" size={Fontes.grande1} color={Cores.primariaEscura} /></Text>
             <Text style={estilos.drawerText}>Home</Text>
         </TouchableOpacity>
@@ -42,7 +43,7 @@ export default function Layout() {
         {/* SEGUNDO ITEM DO MENU (CADASTRO PRODUTOS) */}
           <TouchableOpacity
           style={estilos.drawerItem}
-            onPress={() => props.navigation.navigate('CadastroProdutos')}>
+            onPress={() => router.navigate('/(auth)/CadastroProdutos')}>
             <Text style={estilos.drawerIcon}><MaterialIcons name="add-circle" size={Fontes.grande1} color={Cores.primariaEscura} /></Text>
             <Text style={estilos.drawerText}>Cadastro de Produtos</Text>
           </TouchableOpacity>
@@ -50,7 +51,7 @@ export default function Layout() {
           {/* TERCEIRO ITEM DO MENU (LISTA DE PRODUTOS) */}
           <TouchableOpacity
           style={estilos.drawerItem}
-            onPress={() => props.navigation.navigate('perfil')}>
+            onPress={() => router.navigate('/(auth)/sobre')}>
             <Text style={estilos.drawerIcon}><MaterialIcons name="check" size={Fontes.grande1} color={Cores.primariaEscura} /></Text>
             <Text style={estilos.drawerText}>Lista de Produtos</Text>
           </TouchableOpacity>
@@ -58,7 +59,7 @@ export default function Layout() {
           {/* QUARTO ITEM DO MENU (REGISTRAR MOVIMENTO) */}
           <TouchableOpacity
           style={estilos.drawerItem}
-            onPress={() => props.navigation.navigate('sobre')}>
+            onPress={() => router.navigate('/(auth)/sobre')}>
             <Text style={estilos.drawerIcon}><MaterialIcons name="swap-vert" size={Fontes.grande1} color={Cores.primariaEscura} /></Text>
             <Text style={estilos.drawerText}>Registrar Movimento</Text>
           </TouchableOpacity>
@@ -66,7 +67,7 @@ export default function Layout() {
         {/* QUINTO ITEM DO MENU (HISTÓRICO) */}
           <TouchableOpacity
           style={estilos.drawerItem}
-            onPress={() => props.navigation.navigate('sobre')}>
+            onPress={() => router.navigate('/(auth)/sobre')}>
             <Text style={estilos.drawerIcon}><MaterialIcons name="history" size={Fontes.grande1} color={Cores.primariaEscura} /></Text>
             <Text style={estilos.drawerText}>Histórico</Text>
           </TouchableOpacity>
@@ -74,7 +75,7 @@ export default function Layout() {
           {/* QUINTO ITEM DO MENU (Relatórios) */}
           <TouchableOpacity
           style={estilos.drawerItem}
-            onPress={() => props.navigation.navigate('Relatorio')}>
+            onPress={() => router.navigate('/(auth)/Relatorio')}>
             <Text style={estilos.drawerIcon}><MaterialIcons name="list" size={Fontes.grande1} color={Cores.primariaEscura} /></Text>
             <Text style={estilos.drawerText}>Relatórios</Text>
           </TouchableOpacity>
@@ -85,7 +86,6 @@ export default function Layout() {
             style={{ marginTop: 'auto' }}>
             <MaterialIcons name="logout" size={Fontes.grande1} color={Cores.primariaEscura} />
           </TouchableOpacity>
-
         </View>
         
       )}
@@ -96,6 +96,12 @@ export default function Layout() {
 }
 
 const estilos = StyleSheet.create({
+      menu: {
+        fontFamily: Fontes.baseBold,
+        fontSize: Fontes.medio2,
+        marginBottom: 30,
+      },
+
       drawerItem: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -107,13 +113,13 @@ const estilos = StyleSheet.create({
       },
 
       drawerIcon: {
-        fontSize: 22,
+        fontSize: Fontes.medio2,
         marginRight: 12,
       },
 
       drawerText: {
-        fontSize: 18,
-        fontWeight: '600',
-        color: '#333',
+        fontFamily: Fontes.baseRegular,
+        fontSize: Fontes.medio1,
+        color: Cores.primariaEscura,
       },
     })

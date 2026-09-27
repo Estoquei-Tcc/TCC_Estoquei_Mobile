@@ -3,6 +3,7 @@ export const Fontes = {
     baseRegular: 'MontserratRegular',
     baseBold: 'MontserratBold',
     logo: 'PermanentMarkerRegular',
+    
     pequeno: 12,
     medio1: 16,
     medio2: 20,

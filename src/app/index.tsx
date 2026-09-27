@@ -108,6 +108,7 @@ const estilos = StyleSheet.create({
       backgroundColor: Cores.corfundo,
     },
     titulo: {
+      fontFamily: Fontes.baseBold,
       fontSize: Fontes.extraGrande,
       color: Cores.corprimaria,
     },

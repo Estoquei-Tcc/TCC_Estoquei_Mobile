@@ -126,13 +126,13 @@ const estilos = StyleSheet.create({
     },   
     titulo: {
         color: Cores.corprimaria,
-        fontFamily: Fontes.baseRegular,
+        fontFamily: Fontes.baseBold,
         fontSize: Fontes.grande1,
         marginVertical: 20
     },
     campo: {
         backgroundColor: Cores.corsuperficie,
-        color: Cores.primariaEscura,
+        color: Cores.cortextoclaro,
         fontFamily: Fontes.baseRegular,
         fontSize: Fontes.medio1,
         height: 50,
