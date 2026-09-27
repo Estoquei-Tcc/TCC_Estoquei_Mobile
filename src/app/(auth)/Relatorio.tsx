@@ -2,6 +2,7 @@ import { StyleSheet, View, Text, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Drawer } from 'expo-router/drawer'
 import { Cores } from '@/constants/Cores'
+import { Fontes } from '@/constants/Fontes'
 
 export default function Relatorios(){
 
@@ -95,8 +96,8 @@ const estilos = StyleSheet.create({
         paddingBottom: 10,
     },
     titulo: {
-        fontSize: 20,
-        fontWeight: '800',
+        fontFamily: Fontes.baseBold,
+        fontSize: Fontes.medio2,
         color: Cores.primariaEscura,
         marginBottom: 16,
     },
@@ -109,14 +110,14 @@ const estilos = StyleSheet.create({
         marginBottom: 12,
     },
     tituloCard: {
-        fontSize: 12,
-        fontWeight: '700',
+        fontFamily: Fontes.baseBold,
+        fontSize: Fontes.pequeno,
         color: Cores.corprimaria,
         marginBottom: 6,
     },
     valorCard: {
-        fontSize: 22,
-        fontWeight: '800',
+        fontFamily: Fontes.baseBold,
+        fontSize: Fontes.medio2,
         color: Cores.corprimariahover,
         marginBottom: 10,
     },
@@ -128,12 +129,13 @@ const estilos = StyleSheet.create({
         borderTopColor: Cores.corsuperficieuave,
     },
     chave: {
-        fontSize: 13,
+        fontFamily: Fontes.baseRegular,
+        fontSize: Fontes.pequeno,
         color: Cores.primariaEscura,
     },
     valor: {
-        fontSize: 13,
-        fontWeight: '700',
+        fontFamily: Fontes.baseBold,
+        fontSize: Fontes.pequeno,
         color: Cores.corprimaria,
     },
 })

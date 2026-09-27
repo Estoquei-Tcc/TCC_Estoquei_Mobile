@@ -22,11 +22,16 @@ export function Cabecalho({titulo}: CabecalhoProps){
     return(
         <View style={estilos.conteiner}>
             <Text style={estilos.texto}>{titulo}</Text>
+
             <Pressable 
                 style={estilos.logout}
                 onPress={sair}
             >
-                <MaterialIcons name="logout" size={Fontes.grande1} color={Cores.primariaClara} />
+                <MaterialIcons 
+                    name="logout" 
+                    size={Fontes.grande1} 
+                    color={Cores.corprimariaclara} 
+                />
             </Pressable>    
         </View>
     )
@@ -36,19 +41,19 @@ const estilos = StyleSheet.create({
     conteiner: {
         justifyContent: 'space-between',
         flexDirection: 'row',
-        backgroundColor: Cores.primaria,
+        backgroundColor: Cores.corprimaria,
         alignItems: 'center',
         height: 55,
     },
     texto: {
-        color: Cores.secundariaClara,
+        color: Cores.cortextoclaro,
         fontSize: Fontes.grande1,
-        fontFamily: Fontes.baseRegular,
+        fontFamily: Fontes.baseBold,
         width: '90%',
         textAlign: 'center',
     },
     textoLogo: {
-        color: Cores.primariaClara,
+        color: Cores.corprimariaclara,
         fontSize: Fontes.grande2,
         fontFamily: Fontes.logo,
         width: '90%',

@@ -4,6 +4,7 @@ import { navigate } from 'expo-router/build/global-state/router'
 import { useAutenticacao } from '@/hooks/useAutenticacao'
 import { Drawer } from 'expo-router/drawer'
 import { Cores } from '@/constants/Cores'
+import { Fontes } from '@/constants/Fontes'
 
 export default function Dashboard(){
 
@@ -20,7 +21,6 @@ export default function Dashboard(){
     return(
         <SafeAreaView style={estilos.conteiner}>
 
-            {/* pra colocar o titulo nas paginas tem q usar isso aqui*/}
             <Drawer.Screen options={{ title: 'Dashboard' }} />
 
             <ScrollView contentContainerStyle={estilos.scroll}>
@@ -53,14 +53,14 @@ export default function Dashboard(){
                     <Text style={[estilos.descricaoCard, estilos.textoClaro]}>2 zerados, 3 baixos</Text>
                 </View>
 
-                <View style={estilos.quadrado}>
+                <View style={estilos.quadradoGrande}>
                     <Text style={estilos.tituloCard}>Ações Rápidas</Text>
 
                     <TouchableOpacity onPress={Cadastro} style={estilos.botaoAcao}>
                         <Text style={estilos.botaoAcaoTexto}>Cadastrar produto</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={estilos.botaoAcao}>
+                    <TouchableOpacity  style={estilos.botaoAcao}>
                         <Text style={estilos.botaoAcaoTexto}>Registrar movimentação</Text>
                     </TouchableOpacity>
 
@@ -84,8 +84,8 @@ const estilos = StyleSheet.create({
         paddingBottom: 40,
     },
     titulo: {
-        fontSize: 20,
-        fontWeight: '800',
+        fontFamily: Fontes.baseBold,
+        fontSize: Fontes.medio2,
         color: Cores.primariaEscura,
         marginBottom: 16,
     },
@@ -103,32 +103,40 @@ const estilos = StyleSheet.create({
         padding: 14,
         marginBottom: 12,
     },
+    quadradoGrande: {
+        backgroundColor: Cores.corsuperficie,
+        borderRadius: 12,
+        borderWidth: 1,
+        borderColor: Cores.corborda,
+        padding: 18,
+        marginBottom: 12,
+    },
     destaque: {
         backgroundColor: Cores.corprimaria,
         borderColor: Cores.corprimaria,
     },
     tituloCard: {
-        fontSize: 12,
-        fontWeight: '700',
+        fontFamily: Fontes.baseBold,
+        fontSize: Fontes.pequeno,
         color: Cores.cortextosecundario,
         marginBottom: 6,
     },
     valorCard: {
-        fontSize: 22,
-        fontWeight: '800',
+        fontFamily: Fontes.baseBold,
+        fontSize: Fontes.medio2,
         color: Cores.primariaEscura,
     },
     descricaoCard: {
-        fontSize: 12,
+        fontFamily: Fontes.baseBold,
+        fontSize: Fontes.pequeno,
         color: Cores.corprimaria,
         marginTop: 4,
-        fontWeight: '600',
     },
     linkCard: {
-        fontSize: 12,
+        fontFamily: Fontes.baseBold,
+        fontSize: Fontes.pequeno,
         color: Cores.corprimaria,
         marginTop: 6,
-        fontWeight: '700',
     },
     textoClaro: {
         color: Cores.cortextoclaro,
@@ -142,8 +150,8 @@ const estilos = StyleSheet.create({
         marginTop: 10,
     },
     botaoAcaoTexto: {
+        fontFamily: Fontes.baseBold,
         color: Cores.corprimariahover,
-        fontWeight: '700',
-        fontSize: 13,
+        fontSize: Fontes.pequeno,
     },
 })

@@ -63,7 +63,7 @@ function Valicacoes() {
               break
 
             case 'auth/too-many-requests':
-              setConectadoFirebase(true)
+              setMensagemErro('Muitas tentativas de conexão! Tente novamente mais tarde')
               break
 
             default:
@@ -150,7 +150,7 @@ const estilos = StyleSheet.create({
     alignItems: 'center',
   },
   texto: {
-    color: Cores.primariaClara,
+    color: Cores.cortextoclaro,
     fontFamily: Fontes.baseRegular,
     fontSize: Fontes.medio2,
     textAlign: 'center',
